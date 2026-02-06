@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美好祝福</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 飘落装饰容器 -->
+    <div class="floating-hearts" id="hearts"></div>
+
+    <!-- 祝福计数器 -->
+    <div class="blessing-counter">
+        ✨ 已收到 <span id="blessing-count">0</span> 个祝福
+    </div>
+
+    <!-- 主容器 -->
+    <main class="container">
+        <div class="icon">✨</div>
+        <h1>愿你每天都充满阳光</h1>
+        
+        <!-- 祝福卡片 -->
+        <section class="blessing-card">
+            <div class="blessing-text">
+                <p>🌸 <span class="highlight">健康</span>相伴，笑口常开</p>
+                <p>💫 <span class="highlight">梦想</span>成真，前程似锦</p>
+                <p>🍀 <span class="highlight">好运</span>连连，幸福安康</p>
+                <p>❤️ <span class="highlight">平安</span>喜乐，万事顺遂</p>
+            </div>
+        </section>
+
+        <!-- 祝福按钮组 -->
+        <section class="wish-items">
+            <button class="wish-item" data-blessing="心想事成">🌟 心想事成</button>
+            <button class="wish-item" data-blessing="万事如意">🎊 万事如意</button>
+            <button class="wish-item" data-blessing="幸福美满">🌈 幸福美满</button>
+            <button class="wish-item" data-blessing="快乐每一天">🎉 快乐每一天</button>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>💝 送上最真挚的祝福 💝</p>
+            <p class="hint">点击上方按钮，收获更多祝福！</p>
+        </footer>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
