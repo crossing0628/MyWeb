@@ -5,12 +5,15 @@ function showGame(gameType) {
     // 隐藏菜单
     document.querySelector('.games-menu').classList.add('hidden');
 
-    // 显示游戏区域
-    const gameArea = document.getElementById('game-area');
-    gameArea.classList.remove('hidden');
+    // 显示游戏区域和切换按钮
+    document.getElementById('game-area').classList.remove('hidden');
+    document.getElementById('game-switch').classList.remove('hidden');
 
     // 隐藏所有游戏
     document.querySelectorAll('.game-container').forEach(el => el.classList.add('hidden'));
+
+    // 停止当前运行的游戏
+    stopCurrentGame();
 
     // 显示选中的游戏
     currentGame = gameType;
@@ -23,6 +26,49 @@ function showGame(gameType) {
     } else if (gameType === 'clicker') {
         document.getElementById('clicker-game').classList.remove('hidden');
         document.getElementById('clicker-start').classList.remove('hidden');
+    }
+}
+
+// 切换游戏
+function switchGame(gameType) {
+    if (currentGame === gameType) return;
+    showGame(gameType);
+}
+
+// 返回菜单
+function backToMenu() {
+    // 停止当前游戏
+    stopCurrentGame();
+
+    // 隐藏游戏区域和切换按钮
+    document.getElementById('game-area').classList.add('hidden');
+    document.getElementById('game-switch').classList.add('hidden');
+
+    // 显示菜单
+    document.querySelector('.games-menu').classList.remove('hidden');
+
+    currentGame = null;
+}
+
+// 停止当前游戏
+function stopCurrentGame() {
+    // 停止记忆翻牌计时器
+    if (memoryTimer) {
+        clearInterval(memoryTimer);
+        memoryTimer = null;
+    }
+
+    // 停止接气球游戏
+    if (catchGameActive) {
+        catchGameActive = false;
+        clearInterval(catchInterval);
+        document.onkeydown = null;
+    }
+
+    // 停止点点乐游戏
+    if (clickerActive) {
+        clickerActive = false;
+        clearInterval(clickerTimer);
     }
 }
 

@@ -34,6 +34,14 @@
             </button>
         </div>
 
+        <!-- 游戏切换按钮 -->
+        <div id="game-switch" class="game-switch hidden">
+            <button class="switch-btn" onclick="switchGame('memory')">🧠 记忆翻牌</button>
+            <button class="switch-btn" onclick="switchGame('catch')">🎈 接气球</button>
+            <button class="switch-btn" onclick="switchGame('clicker')">⭐ 点点乐</button>
+            <button class="switch-btn back-menu" onclick="backToMenu()">📋 返回菜单</button>
+        </div>
+
         <!-- 游戏区域 -->
         <div id="game-area" class="game-area hidden">
             <!-- 记忆翻牌游戏 -->
