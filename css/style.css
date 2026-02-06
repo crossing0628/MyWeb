@@ -399,39 +399,75 @@ h1 {
 
 /* ==================== 响应式设计 ==================== */
 @media (max-width: 600px) {
+    body {
+        padding: 10px 0;
+        align-items: flex-start;
+    }
+
     h1 {
-        font-size: 1.8em;
+        font-size: 1.5em;
+        margin-bottom: 15px;
     }
 
     .blessing-text {
-        font-size: 1.1em;
+        font-size: 1em;
+        line-height: 1.8;
+    }
+
+    .blessing-text p {
+        margin: 8px 0;
     }
 
     .icon {
-        font-size: 60px;
+        font-size: 50px;
+        margin-bottom: 15px;
     }
 
     .blessing-counter {
         top: 10px;
         right: 10px;
-        font-size: 0.8em;
-        padding: 8px 15px;
+        font-size: 0.75em;
+        padding: 6px 12px;
     }
 
     .container {
-        padding: 25px;
-        margin: 15px;
+        padding: 20px 15px;
+        margin: 10px;
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .blessing-card {
+        padding: 20px 15px;
+        margin: 15px 0;
+        border-radius: 15px;
+    }
+
+    .wish-items {
+        gap: 10px;
+        margin-top: 20px;
     }
 
     .wish-item {
-        padding: 10px 20px;
+        padding: 10px 18px;
         font-size: 0.9em;
     }
 
-
-    .game-link {
-        padding: 12px 30px;
-        font-size: 1em;
+    .game-section {
+        margin-top: 20px;
     }
 
+    .game-link {
+        padding: 12px 25px;
+        font-size: 0.95em;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 0.85em;
+    }
+
+    .footer .hint {
+        font-size: 0.8em;
+    }
 }

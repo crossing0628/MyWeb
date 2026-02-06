@@ -310,35 +310,98 @@ h1 {
 
 /* ==================== 响应式设计 ==================== */
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .back-btn {
+        top: 10px;
+        left: 10px;
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    .container {
+        padding-top: 50px;
+    }
+
     h1 {
-        font-size: 1.8em;
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+
+    .games-menu {
+        gap: 12px;
     }
 
     .game-card {
-        width: 140px;
-        padding: 20px 15px;
+        width: 100px;
+        padding: 15px 10px;
     }
 
     .game-icon {
-        font-size: 40px;
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .game-card h3 {
+        font-size: 1em;
+    }
+
+    .game-card p {
+        font-size: 0.8em;
+    }
+
+    .game-switch {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .switch-btn {
+        padding: 8px 14px;
+        font-size: 0.85em;
+    }
+
+    .game-area {
+        padding: 15px;
+        border-radius: 20px;
     }
 
     .memory-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+        gap: 8px;
     }
 
     .memory-card {
-        font-size: 25px;
+        font-size: 22px;
+        border-radius: 10px;
     }
 
     .catch-area, .clicker-area {
-        height: 300px;
+        height: 250px;
     }
 
     .game-header {
         flex-wrap: wrap;
-        gap: 10px;
-        font-size: 0.95em;
+        gap: 8px;
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    .basket {
+        font-size: 40px;
+    }
+
+    .target {
+        font-size: 40px;
+    }
+
+    .restart-btn, .start-game-btn {
+        padding: 8px 20px;
+        font-size: 0.9em;
     }
 }
