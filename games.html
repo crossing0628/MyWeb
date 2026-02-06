@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>休闲小游戏</title>
+    <link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <a href="index.html" class="back-btn">← 返回祝福页</a>
+
+    <!-- 主容器 -->
+    <main class="container">
+        <h1>🎮 休闲小游戏</h1>
+        <p class="subtitle">选择你喜欢的游戏，放松一下！</p>
+
+        <!-- 游戏选择区 -->
+        <div class="games-menu">
+            <button class="game-card" onclick="showGame('memory')">
+                <span class="game-icon">🧠</span>
+                <h3>记忆翻牌</h3>
+                <p>考验你的记忆力</p>
+            </button>
+            <button class="game-card" onclick="showGame('catch')">
+                <span class="game-icon">🎈</span>
+                <h3>接气球</h3>
+                <p>接住飘落的气球</p>
+            </button>
+            <button class="game-card" onclick="showGame('clicker')">
+                <span class="game-icon">⭐</span>
+                <h3>点点乐</h3>
+                <p>30秒点击挑战</p>
+            </button>
+        </div>
+
+        <!-- 游戏切换按钮 -->
+        <div id="game-switch" class="game-switch hidden">
+            <button class="switch-btn" onclick="switchGame('memory')">🧠 记忆翻牌</button>
+            <button class="switch-btn" onclick="switchGame('catch')">🎈 接气球</button>
+            <button class="switch-btn" onclick="switchGame('clicker')">⭐ 点点乐</button>
+            <button class="switch-btn back-menu" onclick="backToMenu()">📋 返回菜单</button>
+        </div>
+
+        <!-- 游戏区域 -->
+        <div id="game-area" class="game-area hidden">
+            <!-- 记忆翻牌游戏 -->
+            <div id="memory-game" class="game-container hidden">
+                <div class="game-header">
+                    <span>步数: <span id="memory-moves">0</span></span>
+                    <span>时间: <span id="memory-time">0</span>秒</span>
+                    <button class="restart-btn" onclick="initMemoryGame()">重新开始</button>
+                </div>
+                <div class="memory-grid" id="memory-grid"></div>
+            </div>
+
+            <!-- 接气球游戏 -->
+            <div id="catch-game" class="game-container hidden">
+                <div class="game-header">
+                    <span>得分: <span id="catch-score">0</span></span>
+                    <span>生命: <span id="catch-lives">❤️❤️❤️</span></span>
+                </div>
+                <div class="catch-area" id="catch-area">
+                    <div class="basket" id="basket">🧺</div>
+                </div>
+                <button class="start-game-btn" id="catch-start" onclick="startCatchGame()">开始游戏</button>
+            </div>
+
+            <!-- 点点乐游戏 -->
+            <div id="clicker-game" class="game-container hidden">
+                <div class="game-header">
+                    <span>得分: <span id="clicker-score">0</span></span>
+                    <span>时间: <span id="clicker-time">30</span>秒</span>
+                </div>
+                <div class="clicker-area" id="clicker-area">
+                    <div class="target" id="clicker-target" onclick="hitTarget()">🎯</div>
+                </div>
+                <button class="start-game-btn" id="clicker-start" onclick="startClickerGame()">开始游戏</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/games.js"></script>
+</body>
+</html>
