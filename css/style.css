@@ -364,6 +364,7 @@ h1 {
     animation: fadeIn 1s ease 1.2s both;
 }
 
+<<<<<<< HEAD
 /* ==================== 游戏跳转按钮 ==================== */
 .game-section {
     margin-top: 25px;
@@ -396,11 +397,14 @@ h1 {
     box-shadow: 0 12px 35px rgba(245, 87, 108, 0.6);
 }
 
+=======
+>>>>>>> 1671fcf7c1d50dd28298b499dd34e43bdef4d193
 /* ==================== 响应式设计 ==================== */
 @media (max-width: 600px) {
     h1 {
         font-size: 1.8em;
     }
+<<<<<<< HEAD
 
     .blessing-text {
         font-size: 1.1em;
@@ -410,25 +414,47 @@ h1 {
         font-size: 60px;
     }
 
+=======
+    
+    .blessing-text {
+        font-size: 1.1em;
+    }
+    
+    .icon {
+        font-size: 60px;
+    }
+    
+>>>>>>> 1671fcf7c1d50dd28298b499dd34e43bdef4d193
     .blessing-counter {
         top: 10px;
         right: 10px;
         font-size: 0.8em;
         padding: 8px 15px;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1671fcf7c1d50dd28298b499dd34e43bdef4d193
     .container {
         padding: 25px;
         margin: 15px;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1671fcf7c1d50dd28298b499dd34e43bdef4d193
     .wish-item {
         padding: 10px 20px;
         font-size: 0.9em;
     }
+<<<<<<< HEAD
 
     .game-link {
         padding: 12px 30px;
         font-size: 1em;
     }
+=======
+>>>>>>> 1671fcf7c1d50dd28298b499dd34e43bdef4d193
 }
