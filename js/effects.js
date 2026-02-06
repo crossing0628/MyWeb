@@ -80,25 +80,42 @@ const BlessingEffects = {
 
     /**
      * 创建飘落的祝福语
-     * @param {number} x - 起始X坐标
-     * @param {number} y - 起始Y坐标
+     * @param {number} x - 水平位置（相对于视口）
+     * @param {number} y - 点击位置的Y坐标（用于参考水平位置）
      * @param {string} customText - 自定义祝福语（可选）
      */
     createFloatingBlessing(x, y, customText = null) {
         const blessing = document.createElement('div');
         blessing.className = 'floating-blessing';
 
-        const { messages, emojis, colors, animation } = BlessingConfig;
+        const { messages, symbols, colors, animation } = BlessingConfig;
         
         // 构建祝福语内容
         const message = customText || this.getRandomItem(messages);
-        const emoji = this.getRandomItem(emojis);
+        const emoji = this.getRandomItem(symbols.emojis);
         blessing.innerHTML = `${emoji} ${message} ${emoji}`;
 
-        // 设置位置和样式
-        blessing.style.left = `${x}px`;
-        blessing.style.top = `${y}px`;
+        // 设置位置：从屏幕上方开始飘落，水平位置基于点击位置
+        // 添加随机偏移，使多个祝福不会完全重叠
+        const randomOffset = (Math.random() - 0.5) * 100;
+        blessing.style.left = `${x + randomOffset}px`;
+        blessing.style.top = '-50px'; // 从屏幕上方外开始
         blessing.style.color = this.getRandomItem(colors);
+
+        // 随机选择飘落动画样式（5种）
+        const animationStyles = [
+            'fallAndFade',      // 直线旋转下落
+            'fallAndFade2',     // 左右摇摆下落
+            'fallAndFade3',     // 螺旋下落
+            'fallAndFade4',     // 波浪下落
+            'fallAndFade5'      // 弹跳下落
+        ];
+        const randomAnimation = animationStyles[Math.floor(Math.random() * animationStyles.length)];
+        blessing.style.animation = `${randomAnimation} 5s linear forwards`;
+
+        // 随机字体大小
+        const fontSizes = ['16px', '18px', '20px', '22px', '24px'];
+        blessing.style.fontSize = fontSizes[Math.floor(Math.random() * fontSizes.length)];
 
         document.body.appendChild(blessing);
 

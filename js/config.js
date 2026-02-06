@@ -45,7 +45,7 @@ const BlessingConfig = {
     animation: {
         heartInterval: 800,        // 心形生成间隔(ms)
         heartDuration: 7000,       // 心形存在时间(ms)
-        blessingDuration: 4000,    // 祝福语存在时间(ms)
+        blessingDuration: 5000,    // 祝福语存在时间(ms)
         burstDuration: 800,        // 爆炸效果持续时间(ms)
         burstParticles: 12         // 爆炸粒子数量
     },

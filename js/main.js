@@ -64,26 +64,26 @@ const BlessingApp = {
 
     /**
      * 创建祝福语序列
-     * @param {number} x - 起始X坐标
-     * @param {number} y - 起始Y坐标
+     * @param {number} x - 按钮中心X坐标（水平位置参考）
+     * @param {number} y - 按钮中心Y坐标
      * @param {string} customText - 自定义祝福语
      */
     createBlessingSequence(x, y, customText) {
         // 立即创建第一个
-        BlessingEffects.createFloatingBlessing(x, y - 50, customText);
+        BlessingEffects.createFloatingBlessing(x, y, customText);
         
         // 延迟创建后续祝福语
         setTimeout(() => {
             BlessingEffects.createFloatingBlessing(
-                x + (Math.random() - 0.5) * 200,
-                y - 100
+                x + (Math.random() - 0.5) * 150,
+                y
             );
         }, 200);
         
         setTimeout(() => {
             BlessingEffects.createFloatingBlessing(
-                x + (Math.random() - 0.5) * 200,
-                y - 150
+                x + (Math.random() - 0.5) * 150,
+                y
             );
         }, 400);
     },
